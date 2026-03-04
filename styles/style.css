@@ -48,6 +48,7 @@ body {
 }
 
 .tv-screen {
+  grid-area: tv-screen;
 }
 
 button {
