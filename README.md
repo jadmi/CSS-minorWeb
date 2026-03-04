@@ -11,3 +11,6 @@ Tot slot heb ik een klein experiment uitgevoerd om te zien of je filters kan geb
 
 https://github.com/user-attachments/assets/f287cb48-920f-471c-970c-e393bcedf12f
 
+# Week 1
+## Checkout dag 1
+Vandaag ben ik begonnen met de retro tv. 📺 Als eerst wat styling toegepast voor de vormgeving en vervolgens aan de slag gegaan met het switchen van programmas om te zien op welke manier het werkt. Het is gelukt om de basis hiervan te implementeren met radio buttons en checked states bijhouden. Morgen ga ik verder met meer buttons en de styling ervan. Er zijn veel mogelijkheden voor verschillende buttons en easter eggs.
