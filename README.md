@@ -11,6 +11,27 @@ Tot slot heb ik een klein experiment uitgevoerd om te zien of je filters kan geb
 
 https://github.com/user-attachments/assets/f287cb48-920f-471c-970c-e393bcedf12f
 
-# Week 1
+# Week 2
 ## Checkout dag 1
 Vandaag ben ik begonnen met de retro tv. 📺 Als eerst wat styling toegepast voor de vormgeving en vervolgens aan de slag gegaan met het switchen van programmas om te zien op welke manier het werkt. Het is gelukt om de basis hiervan te implementeren met radio buttons en checked states bijhouden. Morgen ga ik verder met meer buttons en de styling ervan. Er zijn veel mogelijkheden voor verschillende buttons en easter eggs.
+
+# Week 2 - Voortgang dusver
+Verdere styling toegepast, bezig geweest met selectors, poten toegevoegd.
+
+
+
+https://github.com/user-attachments/assets/6c4d2da3-47d8-47be-bd96-a06e89d2ebc6
+
+
+Feedback:
+- Corner shape
+- Theme switching, donkere kamer lichte kamer, tv geeft licht
+- Layers kan je gebruiken om css te structuren
+- Checkbox, aan uit switch
+- Gaat het meer richting control panel, verschillende knoppen
+
+# Week 2
+## Checkout dag 2
+Zoals genoemd in voortgang verder gegaan, nu specifiek met range slider styling de radial button na aan het maken. 
+
+<img width="251" height="251" alt="Screenshot 2026-03-05 at 19 18 49" src="https://github.com/user-attachments/assets/c2f2280d-a3d4-4fe0-9698-af77e8979acf" />
