@@ -1,3 +1,8 @@
+html {
+  container-name: tvKnob;
+  overflow-y: hidden;
+}
+
 /* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css  */
 *,
 ::before,
@@ -21,8 +26,6 @@ body > div {
   /* left -20px 0px 2px rgb(140, 95, 10) */
   /* right  20px 0px 2px rgb(140, 95, 10)*/
   border-radius: 35px;
-  width: 80vw;
-  height: 70vh;
 }
 
 /* tv-outer */
@@ -30,8 +33,9 @@ main > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 10px rgb(176, 121, 19) solid;
+  /* border: 10px rgb(176, 121, 19) solid; */
   width: 80vw;
+  max-width: 900px;
   height: 70vh;
   border-radius: 20px;
   /* box-shadow: 2px -14px 0px 0px rgb(176, 121, 19); */
@@ -48,6 +52,21 @@ main > div > div {
   border: 10px rgb(150, 101, 10) solid;
   width: 74vw;
   height: 64vh;
+  max-width: 830px;
+  border-radius: 20px;
+  corner-shape: squircle;
+  background-color: rgb(150, 101, 10);
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  main aside > div {
+    flex-direction: row;
+    padding: 1em;
+  }
 }
 
 /* tv-sidepanel */
@@ -66,11 +85,20 @@ main aside > div {
   align-items: center;
   flex-direction: column;
   gap: 1em;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    padding: 1em;
+  }
 }
 
 /* tv-screen */
 main section {
+  overflow: hidden;
+  position: relative;
   background: rgb(189, 177, 177);
+  border-radius: 50px;
+  corner-shape: squircle;
 }
 
 input[type="radio"] {
@@ -102,9 +130,11 @@ img {
   display: none;
   height: 100%;
   width: 100%;
+  border-radius: 50px;
+  corner-shape: squircle;
 }
 
-main:has(input[type="radio"]:nth-of-type(1):checked)
+/* main:has(input[type="radio"]:nth-of-type(1):checked)
   section
   img:nth-of-type(1) {
   display: block;
@@ -120,7 +150,7 @@ main:has(input[type="radio"]:nth-of-type(2):checked)
 
 main:has(input[type="radio"]:nth-of-type(3):checked) section img {
   display: none;
-}
+} */
 
 span {
   font-family: monospace;
@@ -130,13 +160,8 @@ span {
 
 main > div:nth-of-type(2) {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  border: none;
-  align-items: flex-start;
-  gap: 23em;
-  margin-top: -0.5em;
-  width: 80vw;
+  gap: 40%;
+  height: fit-content;
 }
 
 main > div:nth-of-type(2) > div {
@@ -162,18 +187,179 @@ main > div:nth-of-type(2) > div:nth-of-type(2) {
   box-shadow: -11px -20px 2px 7px #673d1d;
 }
 
-/* .test {
-  border: 1px solid black;
-  position: absolute;
-  top: 1000px;
-  right: 400px;
-  width: 100px;
-  height: 100px;
+/* Hulp van Sanne */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients#using_radial_gradients */
+
+input[type="range"] {
+  position: relative;
+  appearance: none;
+  display: grid;
+  width: 7em;
+  height: 7em;
+  cursor: pointer;
+  border-radius: 64%;
+  border: 3px solid #504e4e;
+  background: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        0deg,
+        transparent 45%,
+        hsl(0deg 0% 0%) 45%,
+        hsl(339deg 0% 0%) 47%,
+        hsl(344deg 0% 19%) 49%,
+        hsl(344deg 0% 78%) 51%,
+        hsl(300deg 100% 100%) 53%,
+        hsl(0deg 0% 100%) 55%,
+        transparent 55%
+      ),
+      radial-gradient(circle at 55% 25%, #878473 0%, #444 35%, #000 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 1;
+    z-index: 1;
+    transition: rotate 1s cubic-bezier(0.1, 1.3, 0.5, 1);
+    rotate: calc(var(--channel) / 100 * 1turn);
+    background-size:
+      80% 100%,
+      cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
-.test input[type="radio"] {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
-} */
+input[type="range"]::-webkit-slider-thumb {
+  /*   -webkit-appearance: none;
+  width: 20px;
+  height: 25px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+  box-shadow: 0 4px 0 hsl(30deg 80% 25%);
+  z-index: 2; */
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+aside div label {
+  display: grid;
+  place-items: center;
+}
+
+aside div label > * {
+  grid-area: 1/1; /* all children stack in same cell */
+  place-self: center;
+}
+
+aside div label div {
+  z-index: 2;
+  color: white;
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+@container tvKnob style(--channel: 0) {
+  section img:nth-of-type(1) {
+    display: block;
+  }
+}
+
+@container tvKnob style(--channel: 25) {
+  section img:nth-of-type(1) {
+    display: none;
+  }
+  section img:nth-of-type(2) {
+    display: block;
+  }
+}
+
+@container tvKnob style(--channel: 50) {
+  section img:nth-of-type(2) {
+    display: none;
+  }
+  section img:nth-of-type(3) {
+    display: block;
+  }
+}
+
+@container tvKnob style(--channel: 75) {
+  section img:nth-of-type(3) {
+    display: none;
+  }
+  section img:nth-of-type(4) {
+    display: block;
+  }
+}
+
+@container tvKnob style(--channel: 100) {
+  section img:nth-of-type(4) {
+    display: none;
+  }
+  section img:nth-of-type(1) {
+    display: block;
+  }
+}
+
+aside div label div:nth-child(1) {
+  transform: rotate(0deg) translateY(-3.5em) rotate(0deg);
+}
+aside div label div:nth-child(2) {
+  transform: rotate(88deg) translateY(-3.5em) rotate(275deg);
+}
+aside div label div:nth-child(3) {
+  transform: rotate(180deg) translateY(-3.5em) rotate(181deg);
+}
+aside div label div:nth-child(4) {
+  display: none;
+  transform: rotate(216deg) translateY(-3.5em) rotate(-216deg);
+}
+aside div label div:nth-child(5) {
+  transform: rotate(270deg) translateY(-3.5em) rotate(88deg);
+}
+aside div label div:nth-child(6) {
+  transform: rotate(0deg) translateY(-3.5em) rotate(-360deg);
+}
+/* https://www.joshwcomeau.com/animation/3d-button/   */
+
+input[type="checkbox"] {
+  appearance: none;
+  border-radius: 50%;
+  background-color: #444;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  padding: 1px;
+  margin-top: 1em;
+
+  &::after {
+    content: "";
+    display: block;
+    padding: 1.1em;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 50% 40%,
+      #989393 0%,
+      #222 60%,
+      #111 100%
+    );
+    transform: translate(-1px, -4px);
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+
+  &:checked::after,
+  &:active::after {
+    transform: translate(-1px, -1px);
+  }
+}
+
+main:has(#power:checked) section img {
+  display: none;
+}

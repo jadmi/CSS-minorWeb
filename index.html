@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Retro-tv</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div>
@@ -16,21 +17,49 @@
             <section>
               <img
                 src="https://media1.tenor.com/m/s4JY3lm0L-4AAAAd/deep-ocean.gif"
-                alt=""
+                alt="channel1"
               />
               <img
                 src="https://media1.tenor.com/m/JBDbmSj3nUwAAAAC/waves.gif"
-                alt=""
+                alt="channel2"
               />
+              <img
+                src="https://media1.tenor.com/m/T_S2VJZE8l0AAAAd/ocean-waves.gif"
+                alt="channel3"
+              />
+              <img
+                src="https://media1.tenor.com/m/eQDuTRTKWDcAAAAd/waves-ocean.gif"
+                alt="channel4"
+              />
+              <!-- <img
+                src="https://media1.tenor.com/m/JxsJwNo3gcEAAAAC/sea-beach.gif"
+                alt="channel5"
+              /> -->
             </section>
             <!-- tv-screen -->
             <aside>
               <!-- tv-sidepanel -->
               <div>
                 <!-- tv-buttonarea1 -->
-                <input type="radio" name="channel" /><span>CH1</span>
-                <input type="radio" name="channel" /><span>CH2</span>
-                <input type="radio" name="channel" checked /><span>Off</span>
+
+                <!-- channelKnob -->
+                <label>
+                  <input
+                    type="range"
+                    name="channel"
+                    step="25"
+                    value="0"
+                    min="0"
+                    max="100"
+                  />
+                  <div>3</div>
+                  <div>4</div>
+                  <div>5</div>
+                  <div>1</div>
+                  <div>2</div>
+                </label>
+
+                <input type="checkbox" name="power" id="power" />
               </div>
               <!-- tv-buttonarea2 -->
               <!-- <div>
