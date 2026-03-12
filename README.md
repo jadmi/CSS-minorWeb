@@ -41,4 +41,11 @@ Zoals genoemd in voortgang verder gegaan, nu specifiek met range slider styling 
 ## Checkout dag 1
 Vandaag ben ik bezig geweest met de volume dial, die nu bijna helemaal af is. Verder heb ik een "speaker" toegevoegd. Geleerd over handig gebruik van ::before en ::after. Verder over verschillende gradients geleerd. Ik ga morgen bezig met svg filters om een noise effect te maken voor de tv. 
 
+## Checkoutdag 2
+Vandaag ben ik bezig geweest met wat algemene styling. Verder heb ik de antennas toegevoegd, animatie wanneer je erop klikt en het belangrijkst, de svg filter op het scherm (statisch). 
+
+Ideeen: - frequentie range switch, elke frequentie wat anders op het scherm - leuk voor eastereggs
+- Titel / typografie op het scherm (animeren?) 
+
+
 
