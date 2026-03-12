@@ -32,7 +32,7 @@ Feedback:
 
 # Week 2
 ## Checkout dag 2
-Zoals genoemd in voortgang verder gegaan, nu specifiek met range slider styling de radial button na aan het maken. 
+Zoals genoemd in voortgang verder gegaan, nu specifiek met range slider styling de radial button na aan het maken. Daarnaast verder gegaan met basic responsiveness en basic styling.
 
 <img width="251" height="251" alt="Screenshot 2026-03-05 at 19 18 49" src="https://github.com/user-attachments/assets/c2f2280d-a3d4-4fe0-9698-af77e8979acf" />
 
