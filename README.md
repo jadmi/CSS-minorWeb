@@ -35,3 +35,10 @@ Feedback:
 Zoals genoemd in voortgang verder gegaan, nu specifiek met range slider styling de radial button na aan het maken. 
 
 <img width="251" height="251" alt="Screenshot 2026-03-05 at 19 18 49" src="https://github.com/user-attachments/assets/c2f2280d-a3d4-4fe0-9698-af77e8979acf" />
+
+
+# Week 3
+## Checkout dag 1
+Vandaag ben ik bezig geweest met de volume dial, die nu bijna helemaal af is. Verder heb ik een "speaker" toegevoegd. Geleerd over handig gebruik van ::before en ::after. Verder over verschillende gradients geleerd. Ik ga morgen bezig met svg filters om een noise effect te maken voor de tv. 
+
+
