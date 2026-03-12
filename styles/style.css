@@ -15,10 +15,83 @@ body {
   margin: 0;
   justify-content: center;
   align-items: center;
-  margin: 2em;
+  margin-top: 6em;
 }
 
-body > div {
+#antenna + div {
+  position: absolute;
+  top: 65px;
+  z-index: 3;
+  /* left: 100px; */
+  /* top: 0; */
+  height: 2rem;
+  width: 8rem;
+  border-radius: 5rem 5rem 0 0;
+  background: radial-gradient(
+    circle at 51% -15%,
+    #989393 0%,
+    #222 60%,
+    #111 100%
+  );
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 96%;
+    width: 9px;
+    height: 10rem;
+    background: rgb(125, 118, 111);
+    border-radius: 4px;
+  }
+
+  &::before {
+    left: 30%;
+    transform: rotate(-15deg);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+  }
+
+  &::after {
+    right: 30%;
+    transform: rotate(15deg);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+  }
+}
+
+label[for="antenna"] {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10rem;
+  height: 10rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#antenna {
+  appearance: auto;
+  display: none;
+}
+
+#antenna:checked ~ div main section img {
+  filter: url(#filter) opacity(0.5);
+  margin: -1em;
+  width: 68vw;
+  height: 67vh;
+}
+
+#antenna:checked + div::before {
+  transform: rotate(-35deg);
+}
+
+#antenna:checked + div::after {
+  transform: rotate(55deg);
+}
+
+body > div:nth-child(2) {
   box-shadow:
     /* top */
     0px -20px 2px rgb(140, 95, 10),
@@ -34,9 +107,9 @@ main > div {
   justify-content: center;
   align-items: center;
   /* border: 10px rgb(176, 121, 19) solid; */
-  width: 80vw;
+  width: 72vw;
   max-width: 900px;
-  height: 70vh;
+  height: 63vh;
   border-radius: 20px;
   /* box-shadow: 2px -14px 0px 0px rgb(176, 121, 19); */
 }
@@ -51,8 +124,8 @@ main > div > div {
   gap: 0.6em;
   grid-template-columns: 3fr 1fr;
   border: 10px rgb(150, 101, 10) solid;
-  width: 74vw;
-  height: 64vh;
+  width: 66vw;
+  height: 57vh;
   max-width: 830px;
   border-radius: 20px;
   corner-shape: squircle;
@@ -340,14 +413,14 @@ aside div label div {
   }
 }
 
-/* @container tvKnob style(--channel: 250) {
+@container tvKnob style(--channel: 250) {
   section img:nth-of-type(1) {
     display: none;
   }
   section img:nth-of-type(2) {
     display: block;
   }
-} */
+}
 
 aside div label div:nth-child(1) {
   transform: rotate(0deg) translateY(-3.5em) rotate(0deg);

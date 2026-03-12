@@ -8,6 +8,61 @@
     <script src="main.js" defer></script>
   </head>
   <body>
+    <label for="antenna"> </label>
+    <input type="checkbox" id="antenna" />
+    <div></div>
+
+    <svg style="width: 0; height: 0; position: absolute">
+      <defs>
+        <filter
+          id="filter"
+          color-interpolation-filters="linearRGB"
+          filterUnits="objectBoundingBox"
+          primitiveUnits="userSpaceOnUse"
+        >
+          <feTurbulence
+            type="turbulence"
+            baseFrequency="0.795 0.805"
+            numOctaves="5"
+            seed="12"
+            stitchTiles="stitch"
+            result="turbulence"
+          >
+            <animate
+              attributeName="seed"
+              values="12;4;8;2;15;7;11;3;9;12"
+              dur="0.1s"
+              repeatCount="indefinite"
+            />
+          </feTurbulence>
+
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 -40 10"
+            in="turbulence"
+            result="colormatrix"
+          />
+          <feComposite
+            in="colormatrix"
+            in2="SourceAlpha"
+            operator="in"
+            result="composite"
+          />
+
+          <feDisplacementMap
+            in="composite"
+            in2="turbulence1"
+            scale="20"
+            xChannelSelector="R"
+            yChannelSelector="B"
+            result="displacementMap"
+          />
+        </filter>
+      </defs>
+    </svg>
     <div>
       <main>
         <div>
