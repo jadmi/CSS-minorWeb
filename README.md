@@ -47,5 +47,11 @@ Vandaag ben ik bezig geweest met wat algemene styling. Verder heb ik de antennas
 Ideeen: - frequentie range switch, elke frequentie wat anders op het scherm - leuk voor eastereggs
 - Titel / typografie op het scherm (animeren?) 
 
+# Voortgang
+
+
+https://github.com/user-attachments/assets/48063787-3771-4ba5-bb1c-7f9505285374
+
+
 
 
