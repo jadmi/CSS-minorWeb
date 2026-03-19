@@ -380,12 +380,6 @@ main aside > div > div {
   display: flex;
 }
 
-main aside > div > div input[type="radio"]:checked {
-  img {
-    filter: contrast(100);
-  }
-}
-
 main aside > div ~ div {
   grid-row: 2 / 3;
   width: 100%;
@@ -408,26 +402,8 @@ main aside > div ~ div {
   }
 }
 
-input[type="radio"] {
-  width: 50px;
-  height: 50px;
-  accent-color: rgb(125, 118, 111);
-}
-
 aside div:nth-of-type(2) {
   gap: 0;
-}
-
-aside div:nth-of-type(2) input[type="radio"] {
-  width: 30px;
-}
-
-img {
-  display: none;
-  height: 100%;
-  width: 100%;
-  border-radius: 50px;
-  corner-shape: squircle;
 }
 
 main > div:nth-of-type(2) {
