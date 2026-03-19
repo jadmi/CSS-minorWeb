@@ -6,7 +6,7 @@
 html {
   container-name: tvKnob;
   overflow-y: hidden;
-  --wood-dark-inner: rgb(80 54 5);
+  --wood-dark-inner: rgb(116, 84, 25);
 }
 
 /* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css  */
@@ -22,21 +22,26 @@ html {
 
 :root:has([value="dark"]:checked) {
   body {
-    background: radial-gradient(ellipse at center, #746363 0%, #000 90%);
+    /* background: radial-gradient(ellipse at center, #746363 0%, #000 90%); */
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(../images/retro.png);
   }
   main > div:first-child {
     background-color: rgb(107 74 12);
+    /* background-color: rgb(127, 87, 13); */
   }
   main aside {
     background-color: var(--wood-dark-inner);
   }
   main section {
-    background: rgb(113 101 101);
+    background: rgb(140, 130, 130);
     box-shadow:
-      inset 0 0 40px 20px rgba(108, 129, 146, 0.5),
-      inset 0 0 80px 40px rgba(108, 129, 146, 0.25),
-      inset 0 0 120px 60px rgba(108, 129, 146, 0.1),
-      0 0 11px 9px rgba(108, 129, 146, 0.2);
+      inset 0 0 40px 20px rgba(146, 108, 108, 0.5),
+      inset 0 0 80px 40px rgba(146, 108, 108, 0.25),
+      inset 0 0 120px 60px rgba(146, 108, 108, 0.1),
+      0 0 11px 9px rgba(216, 205, 205, 0.2);
+    filter: brightness(1.5);
   }
 
   main > div:first-child > div {
@@ -48,12 +53,52 @@ html {
     background-color: var(--wood-dark-inner);
   }
 
-  section img {
-    filter: grayscale(0.4) brightness(0.8);
+  input[type="range"] {
+    background-image: radial-gradient(
+      circle at 55% 25%,
+      #58564f 0%,
+      #444 35%,
+      #000000 100%
+    );
   }
-  main > div:nth-of-type(2) > div,
-  main > div:nth-of-type(2) > div:nth-of-type(2) {
-    opacity: 0.7;
+
+  input[type="checkbox"]::after {
+    background: radial-gradient(
+      circle at 50% 40%,
+      #545151 0%,
+      #222 60%,
+      #111 100%
+    );
+  }
+
+  #antenna + div {
+    background: radial-gradient(
+      circle at 51% -15%,
+      #3b3a3a 0%,
+      #222 60%,
+      #111 100%
+    );
+  }
+
+  @container tvKnob style(--channel: 50) {
+    section h1 {
+      display: none;
+    }
+    section video:nth-of-type(1) {
+      display: none;
+    }
+    section video:nth-of-type(4) {
+      display: block;
+    }
+
+    body {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.6)), url("../images/image copy.png"),
+        #cc9596;
+      background-repeat: repeat;
+      background-size: 260px;
+      background-position: 100% 31%;
+    }
   }
 }
 
@@ -67,6 +112,13 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 6em;
+  background-image:
+    linear-gradient(rgba(138, 103, 103, 0.4), rgba(138, 103, 103, 0.4)),
+    url("../images/retro.png");
+
+  /* background-color: rgba(138, 103, 103, 0.4);
+  background-blend-mode: darken; */
+  background-size: 800px;
 }
 
 h1 {
@@ -78,7 +130,7 @@ h1 {
 
 h1 span {
   font-family: "Bobar", sans-serif;
-  font-size: clamp(2rem, 12vw, 8rem);
+  font-size: clamp(2rem, 9vw, 8rem);
   opacity: 0;
   color: #f5c400;
   text-shadow:
@@ -223,10 +275,10 @@ main section {
     z-index: 1;
     background: linear-gradient(
       to bottom,
-      transparent 50%,
-      rgba(0, 0, 0, 0.06) 51%
+      transparent 40%,
+      rgba(0, 0, 0, 0.06) 52%
     );
-    background-size: 100% 4px;
+    background-size: 100% 4.3px;
     animation: scanlines 1s steps(60) infinite;
   }
 }
@@ -263,7 +315,11 @@ main > div {
   align-items: center;
   /* border: 10px rgb(176, 121, 19) solid; */
   width: 72vw;
-  max-width: 900px;
+  /* aspect-ratio: 4 / 3; */
+  max-width: 800px;
+  /* clamp calculator */
+  /* width: clamp(550px, 481.8519px + 21.2963vw, 780px); */
+
   height: 63vh;
   border-radius: 20px;
   /* box-shadow: 2px -14px 0px 0px rgb(176, 121, 19); */
@@ -281,7 +337,7 @@ main > div > div {
   border: 10px rgb(150, 101, 10) solid;
   width: 66vw;
   height: 57vh;
-  max-width: 830px;
+  max-width: 730px;
   border-radius: 20px;
   corner-shape: squircle;
   background-color: rgb(150, 101, 10);
@@ -295,6 +351,7 @@ main > div > div {
   main aside > div {
     flex-direction: row;
     padding: 1em;
+    justify-content: space-around;
   }
 }
 
@@ -320,6 +377,7 @@ main aside > div {
   @media (max-width: 768px) {
     flex-direction: row;
     padding: 1em;
+    justify-content: space-around;
   }
 }
 
@@ -344,10 +402,15 @@ main aside > div ~ div {
     transparent 0px,
     transparent 6px,
     hsl(0deg 3.42% 16.57%) 12px,
-    #555 14px
+    #555 14.6px
   );
   border-radius: 4px;
   corner-shape: squircle;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    margin: auto;
+  }
 }
 
 input[type="radio"] {
@@ -383,6 +446,9 @@ main > div:nth-of-type(2) {
   position: absolute;
   gap: 40%;
   height: fit-content;
+  @media (max-width: 768px) {
+    gap: 55%;
+  }
 }
 
 main > div:nth-of-type(2) > div {
@@ -431,6 +497,11 @@ input[type="range"] {
     #444 35%,
     #000 100%
   );
+
+  @media (max-width: 768px) {
+    width: 6em;
+    height: 6em;
+  }
 
   &::before {
     grid-area: 1/1;
@@ -552,12 +623,24 @@ input[type="checkbox"] {
 
 main:has(#power:checked) {
   section {
-    img,
+    video,
     h1 {
       display: none;
     }
   }
 }
+
+video {
+  height: 100%;
+}
+
+section video {
+  display: none;
+}
+
+/* section video:nth-of-type(2) {
+  display: none;
+} */
 
 @container tvKnob style(--channel: 0) {
   section h1 {
@@ -569,34 +652,62 @@ main:has(#power:checked) {
   section h1 {
     display: none;
   }
-  section img:nth-of-type(1) {
-    display: none;
-  }
-  section img:nth-of-type(2) {
+  section video:nth-of-type(1) {
     display: block;
+  }
+  body {
+    background:
+      linear-gradient(rgba(225, 140, 140, 0.6)), url(../images/pinkpanther.png);
+    background-repeat: repeat;
+    background-size: 206px;
+    background-position: 100% 14%;
+    /* background-color: rgba(219, 0, 0, 0.4); */
+    /* background-color: rgba(229, 138, 138, 0.4); */
+    background-color: rgba(135, 91, 91, 0.4);
+    background-blend-mode: darken;
+  }
+  main section {
+    background: rgb(109 109 109);
   }
 }
 
 @container tvKnob style(--channel: 100) {
-  section img:nth-of-type(2) {
+  section video:nth-of-type(1) {
     display: none;
   }
-  section img:nth-of-type(3) {
+  section video:nth-of-type(2) {
     display: block;
+  }
+  body {
+    background:
+      linear-gradient(rgba(119, 63, 63, 0.6)), url(../images/scoobydoo.jpg);
+    background-size: 1700px;
+    background-position: 50% 14%;
+  }
+  main section {
+    background: rgb(109 109 109);
   }
 }
 
 @container tvKnob style(--channel: 150) {
-  section img:nth-of-type(3) {
+  section video:nth-of-type(2) {
     display: none;
   }
-  section img:nth-of-type(4) {
+  section video:nth-of-type(3) {
     display: block;
+  }
+  body {
+    background:
+      linear-gradient(rgba(119, 63, 63, 0.6)), url(../images/flintstones.webp);
+    background-position: 50% 50%;
+  }
+  main section {
+    background: rgb(109 109 109);
   }
 }
 
 @container tvKnob style(--channel: 200) {
-  section img:nth-of-type(4) {
+  section video:nth-of-type(3) {
     display: none;
   }
   section h1 {
@@ -691,7 +802,7 @@ body > input[type="checkbox"]:first-of-type {
   display: none;
 }
 
-#antenna:checked ~ div main section img {
+#antenna:checked ~ div main section video {
   filter: url(#filter) opacity(0.5);
 }
 
@@ -707,4 +818,18 @@ body > input[type="checkbox"]:first-of-type {
 
 #antenna:checked + div::after {
   transform: rotate(55deg);
+}
+
+/* @media (max-width: 768px) {
+  video {
+    height: auto;
+  }
+} */
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50px;
 }
