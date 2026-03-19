@@ -6,7 +6,23 @@
 html {
   container-name: tvKnob;
   overflow-y: hidden;
-  --wood-dark-inner: rgb(116, 84, 25);
+  --tv-width-outer: 72vw;
+  --tv-height-outer: 63vh;
+  --tv-width-inner: 66vw;
+  --tv-height-inner: 57vh;
+  --wood-inner: rgb(150 101 10);
+  --wood-outer: rgb(176 121 19);
+  --wood-dark-inner: rgb(116 84 25);
+  --wood-dark-outer: rgb(107 74 12);
+  --leg-color: #73421f;
+  --leg-shadow: #673d1d;
+  --circle-gradient: radial-gradient(
+    circle at 50% 40%,
+    #989393 0%,
+    #222 60%,
+    #111 100%
+  );
+  --dark-bg: rgba(3, 3, 3, 0.6);
 }
 
 /* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css  */
@@ -22,14 +38,12 @@ html {
 
 :root:has([value="dark"]:checked) {
   body {
-    /* background: radial-gradient(ellipse at center, #746363 0%, #000 90%); */
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url(../images/retro.png);
+      url(../images/retrobg.png);
   }
   main > div:first-child {
-    background-color: rgb(107 74 12);
-    /* background-color: rgb(127, 87, 13); */
+    background-color: var(--wood-dark-outer);
   }
   main aside {
     background-color: var(--wood-dark-inner);
@@ -64,14 +78,14 @@ html {
 
   input[type="checkbox"]::after {
     background: radial-gradient(
-      circle at 50% 40%,
-      #545151 0%,
-      #222 60%,
-      #111 100%
+      circle at 55% 25%,
+      #58564f 0%,
+      #444 35%,
+      #000000 100%
     );
   }
 
-  #antenna + div {
+  input[type="checkbox"] + div {
     background: radial-gradient(
       circle at 51% -15%,
       #3b3a3a 0%,
@@ -93,11 +107,28 @@ html {
 
     body {
       background:
-        linear-gradient(rgba(0, 0, 0, 0.6)), url("../images/image copy.png"),
+        linear-gradient(var(--dark-bg)), url("../images/pinkpantherdark.png"),
         #cc9596;
       background-repeat: repeat;
       background-size: 260px;
       background-position: 100% 31%;
+    }
+  }
+
+  @container tvKnob style(--channel: 100) {
+    body {
+      background:
+        linear-gradient(var(--dark-bg)), url(../images/scoobydoodark.jpg);
+      background-size: 1600px;
+      background-position: 50% 44%;
+    }
+  }
+  @container tvKnob style(--channel: 150) {
+    body {
+      background:
+        linear-gradient(var(--dark-bg)), url(../images/flintstonesdark.jpg);
+      background-size: 550px;
+      background-position: 50% 44%;
     }
   }
 }
@@ -114,10 +145,7 @@ body {
   margin-top: 6em;
   background-image:
     linear-gradient(rgba(138, 103, 103, 0.4), rgba(138, 103, 103, 0.4)),
-    url("../images/retro.png");
-
-  /* background-color: rgba(138, 103, 103, 0.4);
-  background-blend-mode: darken; */
+    url("../images/retrobg.png");
   background-size: 800px;
 }
 
@@ -243,8 +271,6 @@ main section {
   position: relative;
   background: rgb(171 144 144);
   border-radius: 50px;
-  /* corner-shape: squircle; */
-  /* box-shadow: inset 0 0 16px 18px rgba(16, 16, 16, 0.9); */
   padding: 1em;
   display: flex;
   justify-content: center;
@@ -297,13 +323,6 @@ main section {
   }
 }
 
-body > div:nth-child(2) {
-  box-shadow:
-    0px -20px 2px rgb(140, 95, 10),
-    0px 8px 2px rgb(140, 95, 10);
-  border-radius: 35px;
-}
-
 /* ===================== */
 /*     TV STRUCTURE      */
 /* ===================== */
@@ -313,20 +332,14 @@ main > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 10px rgb(176, 121, 19) solid; */
-  width: 72vw;
-  /* aspect-ratio: 4 / 3; */
+  width: var(--tv-width-outer);
   max-width: 800px;
-  /* clamp calculator */
-  /* width: clamp(550px, 481.8519px + 21.2963vw, 780px); */
-
-  height: 63vh;
+  height: var(--tv-height-outer);
   border-radius: 20px;
-  /* box-shadow: 2px -14px 0px 0px rgb(176, 121, 19); */
 }
 
 main > div:first-child {
-  background-color: rgb(176, 121, 19);
+  background-color: var(--wood-outer);
 }
 
 /* tv-inner */
@@ -334,25 +347,13 @@ main > div > div {
   display: grid;
   gap: 0.6em;
   grid-template-columns: 3fr 1fr;
-  border: 10px rgb(150, 101, 10) solid;
-  width: 66vw;
-  height: 57vh;
+  border: 10px var(--wood-inner) solid;
+  width: var(--tv-width-inner);
+  height: var(--tv-height-inner);
   max-width: 730px;
   border-radius: 20px;
   corner-shape: squircle;
-  background-color: rgb(150, 101, 10);
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  main aside > div {
-    flex-direction: row;
-    padding: 1em;
-    justify-content: space-around;
-  }
+  background-color: var(--wood-inner);
 }
 
 /* ===================== */
@@ -360,12 +361,12 @@ main > div > div {
 /* ===================== */
 
 main aside {
-  background-color: rgb(150, 101, 10);
+  background-color: var(--wood-inner);
   display: grid;
   grid-template-rows: 2fr 1fr;
 }
 
-/* tv-buttonarea1 */
+/* tv-buttonarea */
 main aside > div {
   display: flex;
   justify-content: space-between;
@@ -373,12 +374,6 @@ main aside > div {
   flex-direction: column;
   gap: 1em;
   padding: 1em;
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    padding: 1em;
-    justify-content: space-around;
-  }
 }
 
 main aside > div > div {
@@ -395,7 +390,7 @@ main aside > div ~ div {
   grid-row: 2 / 3;
   width: 100%;
   height: 100%;
-  background-color: rgb(150, 101, 10);
+  background-color: var(--wood-inner);
 
   background-image: repeating-linear-gradient(
     180deg,
@@ -414,19 +409,12 @@ main aside > div ~ div {
 }
 
 input[type="radio"] {
-  /* appearance: none; */
-  /* border: 1px black solid;
-  border-radius: 50%;
-  */
   width: 50px;
   height: 50px;
   accent-color: rgb(125, 118, 111);
 }
 
 aside div:nth-of-type(2) {
-  /* display: flex;
-  flex-direction: row; 
-  */
   gap: 0;
 }
 
@@ -446,32 +434,22 @@ main > div:nth-of-type(2) {
   position: absolute;
   gap: 40%;
   height: fit-content;
-  @media (max-width: 768px) {
-    gap: 55%;
-  }
 }
 
 main > div:nth-of-type(2) > div {
   border: none;
-  transform: rotate(13deg);
   width: 5vh;
   height: 40vh;
   border-radius: 8px;
-  background-color: #73421f;
-  box-shadow: 11px -20px 2px 7px #673d1d;
-
+  background-color: var(--leg-color);
   z-index: -1;
+  transform: rotate(13deg);
+  box-shadow: 11px -20px 2px 7px var(--leg-shadow);
 }
 
 main > div:nth-of-type(2) > div:nth-of-type(2) {
-  border: none;
   transform: rotate(347deg);
-  width: 5vh;
-  height: 40vh;
-  border-radius: 8px;
-  background-color: #73421f;
-  z-index: -1;
-  box-shadow: -11px -20px 2px 7px #673d1d;
+  box-shadow: -11px -20px 2px 7px var(--leg-shadow);
 }
 
 /* ===================== */
@@ -497,11 +475,6 @@ input[type="range"] {
     #444 35%,
     #000 100%
   );
-
-  @media (max-width: 768px) {
-    width: 6em;
-    height: 6em;
-  }
 
   &::before {
     grid-area: 1/1;
@@ -588,7 +561,7 @@ aside div label div {
 
 /* inspired by / based on https://www.joshwcomeau.com/animation/3d-button/   */
 
-input[type="checkbox"] {
+input[type="checkbox"]:first-of-type {
   appearance: none;
   border-radius: 50%;
   background-color: #444;
@@ -603,12 +576,7 @@ input[type="checkbox"] {
     display: block;
     padding: 1.1em;
     border-radius: 50%;
-    background: radial-gradient(
-      circle at 50% 40%,
-      #989393 0%,
-      #222 60%,
-      #111 100%
-    );
+    background: var(--circle-gradient);
     transform: translate(-1px, -4px);
     transition:
       transform 0.2s,
@@ -638,10 +606,6 @@ section video {
   display: none;
 }
 
-/* section video:nth-of-type(2) {
-  display: none;
-} */
-
 @container tvKnob style(--channel: 0) {
   section h1 {
     display: block;
@@ -657,12 +621,10 @@ section video {
   }
   body {
     background:
-      linear-gradient(rgba(225, 140, 140, 0.6)), url(../images/pinkpanther.png);
+      linear-gradient(rgba(255, 255, 255, 0.6)), url(../images/pinkpanther.png);
     background-repeat: repeat;
     background-size: 206px;
     background-position: 100% 14%;
-    /* background-color: rgba(219, 0, 0, 0.4); */
-    /* background-color: rgba(229, 138, 138, 0.4); */
     background-color: rgba(135, 91, 91, 0.4);
     background-blend-mode: darken;
   }
@@ -680,7 +642,7 @@ section video {
   }
   body {
     background:
-      linear-gradient(rgba(119, 63, 63, 0.6)), url(../images/scoobydoo.jpg);
+      linear-gradient(rgba(119, 63, 63, 0.4)), url(../images/scoobydoo.jpg);
     background-size: 1700px;
     background-position: 50% 14%;
   }
@@ -698,7 +660,7 @@ section video {
   }
   body {
     background:
-      linear-gradient(rgba(119, 63, 63, 0.6)), url(../images/flintstones.webp);
+      linear-gradient(rgba(119, 63, 63, 0.4)), url(../images/flintstones.webp);
     background-position: 50% 50%;
   }
   main section {
@@ -739,7 +701,7 @@ aside div label div:nth-child(6) {
 /*      ANTENNA          */
 /* ===================== */
 
-#antenna + div {
+input[type="checkbox"] + div {
   position: absolute;
   top: 65px;
   z-index: 3;
@@ -790,7 +752,7 @@ label[for="antenna"] {
   cursor: pointer;
 }
 
-/* scherm noise filter */
+/* screen noise filter */
 svg {
   width: 0;
   height: 0;
@@ -820,16 +782,64 @@ body > input[type="checkbox"]:first-of-type {
   transform: rotate(55deg);
 }
 
-/* @media (max-width: 768px) {
-  video {
-    height: auto;
-  }
-} */
-
 video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 50px;
+}
+
+body > input[type="checkbox"]:nth-of-type(2) {
+  appearance: none;
+  border-radius: 50%;
+  background-color: #444;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8em;
+  position: absolute;
+  top: 14px;
+  left: 30px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0.4em;
+    height: 2em;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #989393 0%, #222 60%, #111 100%);
+    transform-origin: center bottom;
+    transform: rotate(-30deg);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  &:checked::after,
+  &:active::after {
+    transform: rotate(30deg);
+  }
+}
+
+/* Media queries  */
+
+@media (max-width: 768px) {
+  main > div > div {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+  }
+  main aside > div {
+    flex-direction: row;
+    padding: 1em;
+    justify-content: space-around;
+  }
+  input[type="range"] {
+    width: 6em;
+    height: 6em;
+  }
+  main > div:nth-of-type(2) {
+    gap: 55%;
+  }
 }
