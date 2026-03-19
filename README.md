@@ -62,7 +62,7 @@ https://github.com/user-attachments/assets/48063787-3771-4ba5-bb1c-7f9505285374
 
 
 ## Tussentijd
-Typografie/titel toegevoegd, meer details op het scherm (scanlines).
+Typografie/titel toegevoegd, geleerd over variable fonts, meer details op het scherm (scanlines).
 
 
 https://github.com/user-attachments/assets/8c3b188e-9810-4d95-bea4-d71f021cfe8b
@@ -72,7 +72,21 @@ https://github.com/user-attachments/assets/8c3b188e-9810-4d95-bea4-d71f021cfe8b
 
 # Week 4 
 ## Checkout dag 2
-Vandaag de laatste loodjes, ik ben bezig geweest met extra details zoals 70's cartoons als kanalen en verschillende achtergronden. Daarbij de dark mode wat verder uitgewerkt.
+Vandaag de laatste loodjes, ik ben bezig geweest met extra details zoals 70's cartoons als kanalen en verschillende achtergronden. Daarbij de dark mode wat verder uitgewerkt met :has.
 
 
+# Completion
+## Eindresultaat
+
+Ik heb een retro tv (jaren 70) nagemaakt
+
+https://github.com/user-attachments/assets/c185922c-0eed-4d9d-b74d-11d20f71c725
+
+Al met al ben ik zeker tevreden met het eindresultaat, ik vind dat ik goed de "retro vibe" heb kunnen meenemen in mijn design met behulp van de extra details zoals de 70's cartoons. Ik heb de tv echt stapje voor stapje opgebouwd en geitereerd, zo begon ik gelijk met het frame om vervolgens verder te bouwen aan de knoppen en uiteindelijk de details om het af te maken. 
+
+Het lastigste voor mij was gedurende het vak op kunnen zoeken wat ik in gedachte had, ik vond het moeilijk te beschrijven. Als ik er zelf niet uitkwam was het in dat soort gevallen fijn om de docent te vragen, neem als voorbeeld de kanalen knop. Deze heb ik als eerst zelf proberen te maken in codepen met de manier die Nils voorstelde, https://codepen.io/jadmi-the-reactor/pen/ogzxZdR door radios te stapelen maar daar kwam ik die dag niet uit. Ik vroeg Sanne om hulp en die gaf het eerste zetje, vanuit daar ben ik verder gaan bouwen, toen ik vast liep nog een keer gevraagd en zo ben ik er uit gekomen. Het was voor mij allemaal magie met ::before en ::afters. Voor dit vak wist ik niet eens precies waarvoor je een before of after zou moeten gebruiken, en nu heb ik ze bijna alleen maar gebruikt en heb ik door wat je er allemaal mee kan doen.
+
+Ik heb zeker veel kennis opgedaan tijdens dit vak, ik ben een stuk beter met selectoren zoals +, > en ~ en css nesting. Nesting heb ik echt veel meer gebruikt dan gedacht en daardoor heb ik ook gemerkt hoe handig en overzichtelijk het is. Ook heb ik voor het eerst een svg filters gebruikt en weet ik dankzij de workshop dat er veel mogelijkheden mee zijn. Tot slot heb ik een variable font gebruikt, wat cool was om te gebruiken en te zien wat de mogelijkheden zijn. Ook moet ik eerlijk zeggen dat ik dit soort css lastig vind. Daarom heb ik veel gewerkt buiten de lestijden omdat ik het graag wilde maken zoals ik in gedachte had, dit is naar mijn mening wel gelukt en daarom ben ik trots op mezelf.
+
+Tot slot als ik kijk naar dingen die ik verder zou willen ontdekken, lijken svg filters mij interessant. Daarnaast terugkoppelend op een gesprek dat ik met Sanne heb gehad, kwam ik af en toe SASS tegen en lijkt het me interessant om precies uit te vinden waarom het vaak wordt gebruikt/handig zou kunnen zijn voor mijn eigen werk. 
 
