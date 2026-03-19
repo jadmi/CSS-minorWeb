@@ -95,6 +95,12 @@ html {
   }
 
   @container tvKnob style(--channel: 50) {
+    main:has(aside input[type="checkbox"]:checked) {
+      section video:nth-of-type(4) {
+        display: none;
+      }
+    }
+
     section h1 {
       display: none;
     }
@@ -565,7 +571,7 @@ input[type="checkbox"]:first-of-type {
   }
 }
 
-main:has(#power:checked) {
+main:has(aside input[type="checkbox"]:checked) {
   section {
     video,
     h1 {
@@ -740,21 +746,21 @@ body > input[type="checkbox"]:first-of-type {
   display: none;
 }
 
-#antenna:checked ~ div main section video {
+body > input[type="checkbox"]:first-of-type:checked ~ div main section video {
   filter: url(#filter) opacity(0.5);
 }
 
-#antenna:checked ~ div main section h1 {
+body > input[type="checkbox"]:first-of-type:checked ~ div main section h1 {
   width: 100%;
   height: 100%;
   filter: url(#filter) opacity(0.5);
 }
 
-#antenna:checked + div::before {
+body > input[type="checkbox"]:first-of-type:checked + div::before {
   transform: rotate(-35deg);
 }
 
-#antenna:checked + div::after {
+body > input[type="checkbox"]:first-of-type:checked + div::after {
   transform: rotate(55deg);
 }
 
