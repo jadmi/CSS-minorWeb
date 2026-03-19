@@ -91,14 +91,27 @@ Ik heb zeker veel kennis opgedaan tijdens dit vak, ik ben een stuk beter met sel
 Tot slot als ik kijk naar dingen die ik verder zou willen ontdekken, lijken svg filters mij interessant. Daarnaast terugkoppelend op een gesprek dat ik met Sanne heb gehad, kwam ik af en toe SASS tegen en lijkt het me interessant om precies uit te vinden waarom het vaak wordt gebruikt/handig zou kunnen zijn voor mijn eigen werk. 
 
 # Bronnen
-https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using 
-https://codepen.io/ynef/pen/yvvyGv
-https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients#using_radial_gradients
-https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background
-https://www.joshwcomeau.com/gradient-generator/
-https://www.joshwcomeau.com/animation/3d-button/ 
-https://yoksel.github.io/svg-filters/
-Hulp van Sanne & Nils
+https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using  
+
+https://codepen.io/ynef/pen/yvvyGv  
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients#using_radial_gradients  
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background  
+
+https://www.joshwcomeau.com/gradient-generator/  
+
+https://www.joshwcomeau.com/animation/3d-button/  
+
+https://yoksel.github.io/svg-filters/  
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation  
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow
+
+Hulp van Sanne & Nils  
+
+FONT: https://www.behance.net/gallery/178221723/Bobar-Bold-Variable-Retro-Font
 
 ### Gebruik AI
 Specifiek: Help from Claude: prompt: combine and randomize the timings
